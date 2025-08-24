@@ -1,0 +1,148 @@
+{ 
+"spatial_relations.json": {
+    "exhibition_halls": [
+      {
+        "id": "ancient_sichuan_hall",
+        "name": "古代四川馆",
+        "entrance": {"x": 0, "y": 0},
+        "exit": {"x": 45, "y": 40},
+        "total_area": {"width": 45, "height": 40},
+        "areas": [
+          {
+            "name": "入口展区",
+            "bounds": {"x1": 0, "y1": 0, "x2": 20, "y2": 10},
+            "artifacts": ["item_001"],
+            "description": "展厅入口区域，展示三星堆文化的标志性文物"
+          },
+          {
+            "name": "中央展区", 
+            "bounds": {"x1": 10, "y1": 10, "x2": 30, "y2": 20},
+            "artifacts": ["item_002"],
+            "description": "展厅中央区域，展示大型青铜器"
+          },
+          {
+            "name": "精品展区",
+            "bounds": {"x1": 20, "y1": 20, "x2": 40, "y2": 30},
+            "artifacts": ["item_003"],
+            "description": "精品文物展示区，展示金沙文化珍品"
+          },
+          {
+            "name": "陶器展区",
+            "bounds": {"x1": 5, "y1": 25, "x2": 25, "y2": 35},
+            "artifacts": ["item_004"],
+            "description": "陶器文物展示区"
+          },
+          {
+            "name": "瓷器展区",
+            "bounds": {"x1": 15, "y1": 30, "x2": 35, "y2": 40},
+            "artifacts": ["item_005"],
+            "description": "历代瓷器展示区"
+          },
+          {
+            "name": "汉代展区",
+            "bounds": {"x1": 30, "y1": 5, "x2": 45, "y2": 15},
+            "artifacts": ["item_006"],
+            "description": "汉代文物展示区"
+          },
+          {
+            "name": "石雕展区",
+            "bounds": {"x1": 0, "y1": 15, "x2": 15, "y2": 25},
+            "artifacts": ["item_007"],
+            "description": "石雕文物展示区"
+          },
+          {
+            "name": "丝绸展区",
+            "bounds": {"x1": 35, "y1": 25, "x2": 45, "y2": 35},
+            "artifacts": ["item_008"],
+            "description": "丝绸纺织品展示区"
+          }
+        ]
+      }
+    ],
+    "paths": [
+      {
+        "from": "item_001",
+        "to": "item_002",
+        "distance": 15,
+        "direction": "向前直行15米",
+        "landmarks": ["中央走道", "信息台"],
+        "estimated_time": 2
+      },
+      {
+        "from": "item_002",
+        "to": "item_003",
+        "distance": 18,
+        "direction": "右转前行18米",
+        "landmarks": ["右侧通道", "休息区"],
+        "estimated_time": 3
+      },
+      {
+        "from": "item_003",
+        "to": "item_004",
+        "distance": 20,
+        "direction": "左转前行20米",
+        "landmarks": ["左侧通道"],
+        "estimated_time": 3
+      },
+      {
+        "from": "item_004",
+        "to": "item_005",
+        "distance": 12,
+        "direction": "向右前行12米",
+        "landmarks": ["中央通道"],
+        "estimated_time": 2
+      },
+      {
+        "from": "item_001",
+        "to": "item_006",
+        "distance": 25,
+        "direction": "右转前行25米",
+        "landmarks": ["右侧主通道"],
+        "estimated_time": 4
+      },
+      {
+        "from": "item_007",
+        "to": "item_001",
+        "distance": 10,
+        "direction": "右转前行10米",
+        "landmarks": ["入口通道"],
+        "estimated_time": 2
+      },
+      {
+        "from": "item_005",
+        "to": "item_008",
+        "distance": 15,
+        "direction": "右转前行15米",
+        "landmarks": ["东侧通道"],
+        "estimated_time": 2
+      }
+    ],
+    "facilities": [
+      {
+        "type": "休息区",
+        "location": {"x": 22, "y": 18},
+        "description": "设有座椅的休息区域"
+      },
+      {
+        "type": "信息台",
+        "location": {"x": 15, "y": 8},
+        "description": "提供咨询服务的信息台"
+      },
+      {
+        "type": "卫生间",
+        "location": {"x": 2, "y": 38},
+        "description": "公共卫生间"
+      },
+      {
+        "type": "出入口",
+        "location": {"x": 0, "y": 0},
+        "description": "展厅主入口"
+      },
+      {
+        "type": "应急出口",
+        "location": {"x": 45, "y": 20},
+        "description": "应急疏散出口"
+      }
+    ]
+  }
+}

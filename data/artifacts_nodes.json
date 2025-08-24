@@ -1,0 +1,110 @@
+{
+  "artifacts_nodes.json": {
+    "artifacts": [
+      {
+        "id": "item_001",
+        "name": "青铜立人像",
+        "category": "青铜器",
+        "period": "商晚期",
+        "location": "展厅入口右侧",
+        "coordinates": {"x": 10, "y": 5},
+        "importance": "珍品",
+        "popularity": "热门",
+        "keywords": ["三星堆", "青铜", "立人", "祭祀"],
+        "estimated_time": 5,
+        "description": "三星堆文化的代表作品，高度达260.8厘米，是目前世界上发现的最高大的商代青铜立人像。"
+      },
+      {
+        "id": "item_002", 
+        "name": "青铜神树",
+        "category": "青铜器",
+        "period": "商晚期",
+        "location": "中央展区",
+        "coordinates": {"x": 20, "y": 15},
+        "importance": "珍品",
+        "popularity": "热门",
+        "keywords": ["三星堆", "神树", "宇宙观", "青铜"],
+        "estimated_time": 8,
+        "description": "三星堆出土的青铜神树，象征着古代蜀人的宇宙观，分为三层，每层三枝，共九枝。"
+      },
+      {
+        "id": "item_003",
+        "name": "金沙太阳神鸟",
+        "category": "金器",
+        "period": "商周",
+        "location": "精品展区",
+        "coordinates": {"x": 30, "y": 25},
+        "importance": "珍品",
+        "popularity": "热门",
+        "keywords": ["金沙", "太阳神鸟", "文化遗产标志"],
+        "estimated_time": 6,
+        "description": "金沙遗址出土，中国文化遗产标志，呈现太阳和神鸟的完美结合。"
+      },
+      {
+        "id": "item_004",
+        "name": "彩绘陶罐",
+        "category": "陶器",
+        "period": "新石器时代",
+        "location": "陶器展区",
+        "coordinates": {"x": 15, "y": 30},
+        "importance": "重要",
+        "popularity": "一般",
+        "keywords": ["彩绘", "陶器", "新石器"],
+        "estimated_time": 3,
+        "description": "新石器时代的彩绘陶罐，展现了古代先民的艺术水平和生活方式。"
+      },
+      {
+        "id": "item_005",
+        "name": "青花瓷瓶",
+        "category": "瓷器", 
+        "period": "明代",
+        "location": "瓷器展区",
+        "coordinates": {"x": 25, "y": 35},
+        "importance": "重要",
+        "popularity": "热门",
+        "keywords": ["青花瓷", "明代", "瓷器"],
+        "estimated_time": 4,
+        "description": "明代永乐年间的青花瓷瓶，工艺精湛，代表了明代瓷器的最高水准。"
+      },
+      {
+        "id": "item_006",
+        "name": "铜钱树",
+        "category": "青铜器",
+        "period": "东汉",
+        "location": "汉代展区",
+        "coordinates": {"x": 35, "y": 10},
+        "importance": "重要",
+        "popularity": "热门",
+        "keywords": ["东汉", "摇钱树", "青铜"],
+        "estimated_time": 4,
+        "description": "东汉时期的摇钱树，反映了当时人们对财富和来世的美好祈愿。"
+      },
+      {
+        "id": "item_007",
+        "name": "石雕辟邪",
+        "category": "石器",
+        "period": "南朝",
+        "location": "石雕展区",
+        "coordinates": {"x": 5, "y": 20},
+        "importance": "重要",
+        "popularity": "一般",
+        "keywords": ["石雕", "辟邪", "南朝"],
+        "estimated_time": 3,
+        "description": "南朝时期的石雕辟邪，造型威猛，寓意驱邪避凶。"
+      },
+      {
+        "id": "item_008",
+        "name": "蜀锦",
+        "category": "纺织品",
+        "period": "汉唐",
+        "location": "丝绸展区",
+        "coordinates": {"x": 40, "y": 30},
+        "importance": "重要",
+        "popularity": "热门",
+        "keywords": ["蜀锦", "丝绸", "织造"],
+        "estimated_time": 4,
+        "description": "汉唐时期的蜀锦，工艺精美，是古代四川丝织业的代表。"
+      }
+    ]
+  }
+}

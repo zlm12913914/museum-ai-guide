@@ -1,0 +1,11 @@
+{
+  "name": "museum-ai-guide",
+  "version": "1.0.0",
+  "description": "四川博物院AI导览系统",
+  "main": "index.js",
+  "scripts": {
+    "dev": "python app.py",
+    "start": "python app.py",
+    "build": "echo 'Build completed'"
+  }
+}
