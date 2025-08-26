@@ -539,7 +539,7 @@
         let ratings = {};
         
         // API配置
-        const API_BASE_URL = 'http://localhost:5000'; // 本地测试URL
+        const API_BASE_URL = 'https://museum-ai.zeabur.app:5000'; // 本地测试URL
 
         // 页面加载完成后初始化
         document.addEventListener('DOMContentLoaded', function() {
@@ -645,69 +645,36 @@
         }
 
         // API调用函数
-        async function callAPI(endpoint, data = null, method = 'POST') {
+        async function callAPI(endpoint, data = null) {
             const url = `${API_BASE_URL}/api${endpoint}`;
             const options = {
-                method: data ? method : 'GET',
+                method: data ? 'POST' : 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 }
             };
-            
-            if (data && method !== 'GET') {
+
+            if (data) {
                 options.body = JSON.stringify(data);
             }
-            
-            try {
-                const response = await fetch(url, options);
-                const result = await response.json();
-                
-                if (!response.ok) {
-                    throw new Error(result.message || 'API调用失败');
-                }
-                
-                return result;
-            } catch (error) {
-                console.error('API调用错误:', error);
-                throw error;
-            }
+
+            const response = await fetch(url, options);
+            return response.json();
         }
 
         // 生成导览路线
         async function generateTourRoute() {
             try {
                 const response = await callAPI('/generate_route', userProfile);
-                
                 if (response.success) {
                     tourRoute = response.route;
                     currentStepIndex = 0;
                 } else {
-                    throw new Error(response.message || '路线生成失败');
+                    throw new Error(response.message);
                 }
             } catch (error) {
                 console.error('生成导览路线失败:', error);
-                // 如果API失败，使用默认路线
-                tourRoute = [
-                    {
-                        id: 'item_001',
-                        name: '青铜立人像',
-                        location: '展厅入口右侧',
-                        description: '三星堆文化的代表作品，高度达260.8厘米...'
-                    },
-                    {
-                        id: 'item_002', 
-                        name: '青铜神树',
-                        location: '中央展区',
-                        description: '三星堆出土的青铜神树，象征着古代蜀人的宇宙观...'
-                    },
-                    {
-                        id: 'item_003',
-                        name: '金沙太阳神鸟',
-                        location: '精品展区',
-                        description: '金沙遗址出土，中国文化遗产标志...'
-                    }
-                ];
-                currentStepIndex = 0;
+                throw error;
             }
         }
 
@@ -719,21 +686,21 @@
                     user_profile: userProfile,
                     context: {
                         current_item: tourRoute[currentStepIndex]?.id,
-                        step_index: currentStepIndex,
-                        tour_route: tourRoute
+                        step_index: currentStepIndex
                     }
                 });
-                
+
                 if (response.success) {
                     return response.response;
                 } else {
-                    throw new Error(response.response || 'AI处理失败');
+                    throw new Error(response.response);
                 }
             } catch (error) {
                 console.error('AI处理失败:', error);
-                return "抱歉，我暂时无法回答您的问题。如果您说的是'请继续'，我将为您讲解当前的藏品。";
+                throw error;
             }
         }
+
 
         // 开始导览
         function startTour() {
@@ -1045,31 +1012,19 @@
         // 提交反馈
         async function submitFeedback() {
             try {
-                const feedbackData = {
+                const response = await callAPI('/feedback', {
                     user_profile: userProfile,
-                    ratings: ratings,
-                    timestamp: new Date().toISOString()
-                };
+                    ratings: ratings
+                });
 
-                const response = await callAPI('/feedback', feedbackData);
-                
                 if (response.success) {
                     alert('感谢您的反馈！您的意见对我们很重要。');
                 } else {
                     throw new Error(response.message);
                 }
-                
-                // 返回欢迎页面
-                showPage('welcomePage');
-                resetApp();
-                
             } catch (error) {
                 console.error('提交反馈失败:', error);
-                alert('提交反馈失败，但您的本次体验数据已保存');
-                
-                // 即使提交失败也返回欢迎页面
-                showPage('welcomePage');
-                resetApp();
+                alert('提交反馈失败，请重试');
             }
         }
 
