@@ -27,7 +27,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="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"
+    api_key=""
 )
 
 from flask import send_from_directory
